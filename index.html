@@ -1,0 +1,56 @@
+
+<html>
+<head>
+	<script type="text/javascript" src="scr.js" ></script>
+</head>
+
+<body>
+
+
+<div class="center_elements" >
+
+    <h2>Problem1:</h2>
+	
+	<p>
+	
+	Multiples of 3 and 5
+	<br>
+    If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+    <br>
+    Find the sum of all the multiples of 3 or 5 below 1000.
+    
+	<p>
+	    
+    <h2>Solution1:</h2>
+	
+	For n = 
+	<input type="text" id="text_prob1_n" value="1000">
+	<input type="button" value="Click For Answer" onclick="showSolution1();" />
+	<input type="text" id="text_sol1" readonly>
+	
+	<p>    
+	Code implementation:
+	<p>
+	<xmp>
+    function sumTo(n) {
+        n = Math.floor(n)
+        return n * (1 + n) / 2;
+    }
+    
+    function solve(n) {
+        n = n-1
+        var sum3, sum5, sum15;
+        sum3 = 3*sumTo(n/3);
+        sum5 = 5*sumTo(n/5);
+        sum15 = 15*sumTo(n/15);
+        return sum3+sum5-sum15;
+    }
+    
+    </xmp>
+
+	
+</div>
+
+
+</body>
+</html>
